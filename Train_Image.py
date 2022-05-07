@@ -4,9 +4,6 @@ import cv2
 import numpy as np
 from PIL import Image
 from threading import Thread
-
-
-
 # -------------- image labesl ------------------------
 
 def getImagesAndLabels(path):
@@ -31,7 +28,6 @@ def getImagesAndLabels(path):
         Ids.append(Id)
     return faces, Ids
 
-
 # ----------- train images function ---------------
 def TrainImages():
     recognizer = cv2.face_LBPHFaceRecognizer.create()
@@ -52,4 +48,3 @@ def counter_img(path):
         print(str(imgcounter) + " Images Trained", end="\r")
         time.sleep(0.008)
         imgcounter += 1
-
