@@ -8,23 +8,13 @@ import sys
 import logging as log
 import datetime as dt
 from time import sleep
-
-
-
 cx = 160
 cy = 120
 
 # names related to ids: example
 names = ['None', 'tasnim','Amir'] 
-
-
 #iniciate id counter
 id = 0
-
-
-
-
-
 xdeg = 150
 ydeg = 150
 
@@ -37,12 +27,6 @@ log.basicConfig(filename='database.log',level=log.INFO)
 # opening the database file using append mode
 file = open("/home/pi/Testnew/data_log.csv", "a")
 
-
-
-
-	
-
-
 images=[]
 labels=[]
 for filename in os.listdir('Dataset'):
@@ -50,9 +34,6 @@ for filename in os.listdir('Dataset'):
 	images.append(im)
 	labels.append(int(filename.split('.')[0][0]))
 	
-
-
-
 recognizer.train(images,np.array(labels))
 print 'Training Done . . . '
 
@@ -95,17 +76,10 @@ while(1):
 
                 
                 #cv2.putText( frame, str(lastRes), ( x, y ), cv2.FONT_HERSHEY_SIMPLEX, 0.5, ( 0, 0, 255 ), 2 )
-                
-
-
-		
-
-	
-	
+                	
 	cv2.imshow('frame',frame)
 	k = 0xFF & cv2.waitKey(10)
 	if k == 27:
 		break
 cap.release()
 cv2.destroyAllWindows()
-
